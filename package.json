@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.19",
+    "vuetify": "^1.5.14"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "cross-env": "^5.1",
+    "jquery": "^3.2",
+    "jqwidgets-scripts": "^7.2.0",
+    "laravel-mix": "^4.0.7",
+    "lodash": "^4.17.5",
+    "popper.js": "^1.12",
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.15.2",
+    "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue": "^2.5.17",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.0.5"
+  }
+}
