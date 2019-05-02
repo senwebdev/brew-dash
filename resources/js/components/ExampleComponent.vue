@@ -59,7 +59,7 @@
         },
         methods: {
             getBatch() {
-                axios.get('http://localhost:8000/show-batch')
+                axios.get('http://powerful-everglades-13168.herokuapp.com/show-batch')
                 .then((res) => {
                     this.batches = res.data;
                     for(var i=0;i<this.batches.length;i++){
@@ -93,7 +93,7 @@
                     am -= parseFloat(amount);
                 }
                 
-                await axios.post('http://localhost:8000/update-batch/' + tank + '/' + amount + '/' + direction)
+                await axios.post('http://powerful-everglades-13168.herokuapp.com/update-batch/' + tank + '/' + amount + '/' + direction)
                 .then((res) => {
                     this.getBatch();
                     vm.$refs.batches[index].val(am);
@@ -109,7 +109,7 @@
                 var amount = parseFloat(amount);
                 console.log(sourceAm, targetAm, amount);
 
-                await axios.post('http://localhost:8000/move-batch/' + source + '/' + target + '/' + amount)
+                await axios.post('http://powerful-everglades-13168.herokuapp.com/move-batch/' + source + '/' + target + '/' + amount)
                 .then((res) => {
                     this.getBatch();
                     vm.$refs.batches[source-1].val(sourceAm-amount);
@@ -121,14 +121,14 @@
             },
             async dumpBatch(tank) {
                 console.log(tank)
-                await axios.post('http://localhost:8000/dump-batch/' + tank)
+                await axios.post('http://powerful-everglades-13168.herokuapp.com/dump-batch/' + tank)
                 .then(response => alert(response.data == 0 ? 'Dumped Successfully!' : 'Dump Failed!'))
                 .catch(function (error) {
                     console.log(error);
                 });
             },
             async kegBatch(tank) {
-                await axios.post('http://localhost:8000/keg-batch/' + tank)
+                await axios.post('http://powerful-everglades-13168.herokuapp.com/keg-batch/' + tank)
                 .then(response => alert(response.data == 1 ? 'Kegged Successfully!' : 'Keg Failed!'))
                 .catch(function (error) {
                     console.log(error);
